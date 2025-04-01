@@ -14,7 +14,7 @@ const ProductDetails = ({ addToCart }) => {
     const [showSizePopup, setShowSizePopup] = useState(false);
     const [showAddToCartPopup, setShowAddToCartPopup] = useState(false);
     const navigate = useNavigate();
-    const isClothProduct = Object.keys(clothData).includes(type); 
+    const isClothOrFeatured = type === 'featured' || !!clothData[type];
 
     useEffect(() => {
         let productData;
@@ -29,7 +29,7 @@ const ProductDetails = ({ addToCart }) => {
             productData = dataproduct[type];
         }
 
-        const foundProduct = productData?.find((p) => p.id === parseInt(id));
+        const foundProduct = productData?.find((p) => p.id === id);
 
         setProduct(foundProduct);
     }, [id, type]);
@@ -54,7 +54,7 @@ const ProductDetails = ({ addToCart }) => {
     };
 
     const handleAddToCart = () => {
-        if (isClothProduct && !selectedSize) {
+        if (isClothOrFeatured && !selectedSize) {
             setShowSizePopup(true);
             return;
         }
@@ -71,7 +71,7 @@ const ProductDetails = ({ addToCart }) => {
     };
 
     const handleBuyNow = () => {
-        if (isClothProduct && !selectedSize) {
+        if (isClothOrFeatured && !selectedSize) {
             setShowSizePopup(true);
             return;
         }
@@ -94,32 +94,35 @@ const ProductDetails = ({ addToCart }) => {
                             <span className="new-price">${product.new_price}</span>
                             <span className="old-price">${product.old_price}</span>
                         </div>
-                        <div className="colors">
-                            <div className="color-circles">
-                                {product.colors && Array.isArray(product.colors) && product.colors.map((color, index) => (
-                                    <div
-                                        key={index}
-                                        className="color-circle"
-                                        style={{ backgroundColor: color }}
-                                    ></div>
-                                ))}
-                            </div>
-                        </div>
-                        {isClothProduct && (
-                            <div className="size-selection">
-                                <p>Size</p>
-                                <div className="size-buttons">
-                                    {['S', 'M', 'L', 'XL', 'XXL'].map(size => (
-                                        <button
-                                            key={size}
-                                            className={`size-button ${selectedSize === size ? 'active' : ''}`}
-                                            onClick={() => handleSizeClick(size)}
-                                        >
-                                            {size}
-                                        </button>
-                                    ))}
+                        {isClothOrFeatured && (
+                            <>
+                                <div className="colors">
+                                    <p>Colors</p> 
+                                    <div className="color-circles">
+                                        {product.colors && Array.isArray(product.colors) && product.colors.map((color, index) => (
+                                            <div
+                                                key={index}
+                                                className="color-circle"
+                                                style={{ backgroundColor: color }}
+                                            ></div>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
+                                <div className="size-selection">
+                                    <p>Size</p>
+                                    <div className="size-buttons">
+                                        {['S', 'M', 'L', 'XL', 'XXL'].map(size => (
+                                            <button
+                                                key={size}
+                                                className={`size-button ${selectedSize === size ? 'active' : ''}`}
+                                                onClick={() => handleSizeClick(size)}
+                                            >
+                                                {size}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+                            </>
                         )}
                         <div className="actions">
                             <button className="add-to-cart" onClick={handleAddToCart}>Add to Cart</button>

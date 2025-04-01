@@ -12,6 +12,7 @@
     padding-top: 20px;
     margin-bottom: 10px;
     color: #333;
+    text-align: center; 
 }
 .featured hr {
     width: 150px;
@@ -28,8 +29,8 @@
 .featured-item > div {
     display: flex;
     flex-direction: column;
-    width: 250px; 
-    height: 350px; 
+    width: 250px;
+    height: 350px;
     border: 1px solid #ddd;
     padding: 10px;
     box-sizing: border-box;
@@ -37,7 +38,46 @@
 .featured-item img {
     width: 100%;
     height: 250px;
-    object-fit: cover; 
+    object-fit: cover;
     display: block;
     margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .featured {
+        width: 95%; 
+        padding: 15px; 
+    }
+    .featured h1 {
+        font-size: 1.8em; 
+    }
+    .featured hr {
+        width: 120px; 
+        margin-bottom: 25px; 
+    }
+    .featured-item > div {
+        width: 90%; 
+        max-width: 300px; 
+        height: auto; 
+        margin: 10px auto; 
+    }
+    .featured-item img {
+        height: auto;
+        max-height: 250px; 
+    }
+}
+@media (max-width: 480px) {
+    .featured {
+        padding: 10px; 
+    }
+    .featured h1 {
+        font-size: 1.6em; 
+    }
+    .featured hr {
+        width: 100px; 
+        margin-bottom: 20px; 
+    }
+    .featured-item > div {
+        width: 95%; 
+    }
 }

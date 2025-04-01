@@ -9,76 +9,76 @@ import bp8_img from './BestFeatures/shoe8.jpg';
 
 let data_bp = [
     {
-        id: 1,
-        name: "Golden Easy Spot Chair 1",
+        id: "bp1",
+        name: "Golden Easy Spot Chair 1", 
         image: bp1_img,
         new_price: 350.00,
         old_price: 550.00,
-        description: "This is the description for Golden Easy Spot Chair 1.",
-        colors: ["gold", "white", "black"]
+        description: "This is the description for Golden Easy Spot Chair 1.", 
+        colors: ["black", "white", "gray"]
     },
     {
-        id: 2,
-        name: "Golden Easy Spot Chair 2",
+        id: "bp2",
+        name: "Golden Easy Spot Chair 2", 
         image: bp2_img,
         new_price: 350.00,
         old_price: 550.00,
-        description: "This is the description for Golden Easy Spot Chair 2.",
-        colors: ["silver", "gray", "brown"]
+        description: "This is the description for Golden Easy Spot Chair 2.", 
+        colors: ["navy", "tan", "brown"]
     },
     {
-        id: 3,
-        name: "Golden Easy Spot Chair 3",
+        id: "bp3",
+        name: "Golden Easy Spot Chair 3", 
         image: bp3_img,
         new_price: 350.00,
         old_price: 550.00,
-        description: "This is the description for Golden Easy Spot Chair 3.",
-        colors: ["red", "blue", "green"]
+        description: "This is the description for Golden Easy Spot Chair 3.", 
+        colors: ["red", "white", "black"]
     },
     {
-        id: 4,
-        name: "Golden Easy Spot Chair 4",
+        id: "bp4",
+        name: "Golden Easy Spot Chair 4", 
         image: bp4_img,
         new_price: 350.00,
         old_price: 550.00,
-        description: "This is the description for Golden Easy Spot Chair 4.",
-        colors: ["yellow", "orange", "purple"]
+        description: "This is the description for Golden Easy Spot Chair 4.", 
+        colors: ["olive", "beige", "darkgray"]
     },
     {
-        id: 5,
-        name: "Golden Easy Spot Chair 5",
+        id: "bp5",
+        name: "Golden Easy Spot Chair 5", 
         image: bp5_img,
         new_price: 350.00,
         old_price: 550.00,
-        description: "This is the description for Golden Easy Spot Chair 5.",
-        colors: ["pink", "teal", "lime"]
+        description: "This is the description for Golden Easy Spot Chair 5.", 
+        colors: ["blue", "lightgray", "white"]
     },
     {
-        id: 6,
-        name: "Golden Easy Spot Chair 6",
+        id: "bp6",
+        name: "Golden Easy Spot Chair 6", 
         image: bp6_img,
         new_price: 350.00,
         old_price: 550.00,
-        description: "This is the description for Golden Easy Spot Chair 6.",
-        colors: ["navy", "maroon", "olive"]
+        description: "This is the description for Golden Easy Spot Chair 6.", 
+        colors: ["burgundy", "black", "gray"]
     },
     {
-        id: 7,
-        name: "Golden Easy Spot Chair 7",
+        id: "bp7",
+        name: "Golden Easy Spot Chair 7", 
         image: bp7_img,
         new_price: 350.00,
         old_price: 550.00,
-        description: "This is the description for Golden Easy Spot Chair 7.",
-        colors: ["cyan", "magenta", "khaki"]
+        description: "This is the description for Golden Easy Spot Chair 7.", 
+        colors: ["yellow", "white", "lightbrown"]
     },
     {
-        id: 8,
-        name: "Golden Easy Spot Chair 8",
+        id: "bp8",
+        name: "Golden Easy Spot Chair 8", 
         image: bp8_img,
         new_price: 350.00,
         old_price: 550.00,
-        description: "This is the description for Golden Easy Spot Chair 8.",
-        colors: ["coral", "lavender", "indigo"]
+        description: "This is the description for Golden Easy Spot Chair 8.", 
+        colors: ["pink", "white", "silver"]
     },
 ];
 

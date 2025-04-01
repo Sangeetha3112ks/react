@@ -5,40 +5,40 @@ import fp4_img from './Product/product4.jpg';
 
 let data_fp = [
     {
-        id: 1,
+        id: "fp1",
         name: "Golden Easy Spot Chair 1",
         image: fp1_img,
         new_price: 350.00,
         old_price: 550.00,
         description: "This is the description for Golden Easy Spot Chair 1.",
-        colors: ["gold", "white", "black"]
+        colors: ["gold", "cream", "espresso"] 
     },
     {
-        id: 2,
+        id: "fp2",
         name: "Golden Easy Spot Chair 2",
         image: fp2_img,
         new_price: 350.00,
         old_price: 550.00,
         description: "This is the description for Golden Easy Spot Chair 2.",
-        colors: ["gold", "white", "black"]
+        colors: ["teal", "lightgray", "navy"] 
     },
     {
-        id: 3,
+        id: "fp3",
         name: "Golden Easy Spot Chair 3",
         image: fp3_img,
         new_price: 350.00,
         old_price: 550.00,
         description: "This is the description for Golden Easy Spot Chair 3.",
-        colors: ["gold", "white", "black"]
+        colors: ["blanchedalmond", "olive", "saddlebrown"] 
     },
     {
-        id: 4,
+        id: "fp4",
         name: "Golden Easy Spot Chair 4",
         image: fp4_img,
         new_price: 350.00,
         old_price: 550.00,
         description: "This is the description for Golden Easy Spot Chair 4.",
-        colors: ["gold", "white", "black"]
+        colors: ["lavender", "silver", "slategray"] 
     },
 ];
 

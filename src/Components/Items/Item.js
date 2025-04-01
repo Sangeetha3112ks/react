@@ -10,7 +10,14 @@ const Item = (props) => {
                 <Link to={`/product/${props.id}/${props.type}`}>
                     <img src={props.image} alt="" />
                 </Link>
-                <HeartIcon />
+                <HeartIcon
+                    id={props.id}
+                    name={props.name}
+                    image={props.image}
+                    new_price={props.new_price}
+                    old_price={props.old_price}
+                    description={props.description}
+                />
             </div>
             <p>{props.name}</p>
             <div className='item-price'>

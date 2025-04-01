@@ -26,7 +26,13 @@ const Category = ({ category }) => {
                         <Link to={`/product/${item.id}/${categoryType}`}>
                             <img src={item.image} alt={item.name} />
                         </Link>
-                        <HeartIcon />
+                        <HeartIcon 
+                            id={item.id}
+                            name={item.name}
+                            image={item.image}
+                            new_price={item.new_price}
+                            old_price={item.old_price}
+                        />
                         <p>{item.name}</p>
                         <p>New Price: ${item.new_price}</p>
                         <p>Old Price: ${item.old_price}</p>
