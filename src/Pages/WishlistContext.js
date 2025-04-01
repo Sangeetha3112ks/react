@@ -1,35 +1,55 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import React, { createContext, useState, useContext } from 'react';
+import LoginPopup from './LoginPopup';
 
 const WishlistContext = createContext();
 
 export const WishlistProvider = ({ children }) => {
-    const [wishlistItems, setWishlistItems] = useState(() => {
-        const storedItems = localStorage.getItem('wishlistItems');
-        return storedItems ? JSON.parse(storedItems) : [];
-    });
+  const [wishlistItems, setWishlistItems] = useState([]);
+  const [likedItemIds, setLikedItemIds] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-    useEffect(() => {
-        localStorage.setItem('wishlistItems', JSON.stringify(wishlistItems));
-    }, [wishlistItems]);
+  const isLoggedIn = () => {
+    return localStorage.getItem('isLoggedIn') === 'true';
+  };
 
-    const addToWishlist = (item) => {
-        setWishlistItems((prevItems) => {
-            if (!prevItems.some((existingItem) => existingItem.id === item.id)) {
-                return [...prevItems, item];
-            }
-            return prevItems;
-        });
-    };
+  const addToWishlist = (item) => {
+    if (isLoggedIn()) {
+      setWishlistItems((prevItems) => {
+        if (!prevItems.some((existingItem) => existingItem.id === item.id)) {
+          setLikedItemIds((prevIds) => [...prevIds, item.id]);
+          return [...prevItems, item];
+        }
+        return prevItems;
+      });
+    } else {
+      setIsModalOpen(true);
+    }
+  };
 
-    const removeFromWishlist = (itemId) => {
-        setWishlistItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
-    };
+  const removeFromWishlist = (itemId) => {
+    setWishlistItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
+    setLikedItemIds((prevIds) => prevIds.filter((id) => id !== itemId));
+  };
 
-    return (
-        <WishlistContext.Provider value={{ wishlistItems, addToWishlist, removeFromWishlist }}>
-            {children}
-        </WishlistContext.Provider>
-    );
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  return (
+    <WishlistContext.Provider
+      value={{
+        wishlistItems,
+        likedItemIds,
+        addToWishlist,
+        removeFromWishlist,
+        isModalOpen,
+        closeModal,
+      }}
+    >
+      {children}
+      {isModalOpen && <LoginPopup onClose={closeModal} />}
+    </WishlistContext.Provider>
+  );
 };
 
 export const useWishlist = () => useContext(WishlistContext);

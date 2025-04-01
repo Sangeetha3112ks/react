@@ -1,0 +1,112 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 0;
+    height: 100vh;
+    background-color: #f9f9f9;
+    position: relative;
+}
+.login-form {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 320px;
+}
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+.login-form .login-button {
+    width: 150px;
+    padding: 10px;
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+}
+.login-form .login-button:hover {
+    background: linear-gradient(135deg, #66BB6A, #43A047);
+}
+.login-form p {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 14px;
+    color: #555;
+}
+.login-form a {
+    color: #2196F3;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+}
+.login-form a:hover {
+    text-decoration: underline;
+}
+.popup-bottom {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    z-index: 1001;
+    width: auto;
+    white-space: nowrap;
+}
+.popup-content-bottom {
+    display: flex;
+    align-items: center;
+}
+.popup-content-bottom p {
+    margin: 0;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+.login-form input:focus, .login-form .login-button:focus{
+    outline: 2px solid #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+.forgot-password {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.password-input {
+    position: relative;
+    margin-bottom: 15px;
+}
+.password-input input {
+    padding-right: 35px;
+}
+.password-icon {
+    position: absolute;
+    right: 10px;
+    top: 35%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 0.9rem;
+    z-index: 1;
+}

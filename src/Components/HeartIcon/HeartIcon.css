@@ -8,6 +8,7 @@
     z-index: 1;
     font-size: 25px;
     transition: transform 0.2s ease;
+    color: #ffffff;
 }
 .hearticon:hover {
     transform: scale(1.2);

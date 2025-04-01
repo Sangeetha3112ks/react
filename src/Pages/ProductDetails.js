@@ -5,6 +5,8 @@ import clothData from '../ClothProducts';
 import dataproduct from '../AccessoriesProduct';
 import bestProducts from '../Components/images/best_img';
 import featuredProducts from '../Components/images/featured_img';
+import toyData from '../Components/images/Toys';
+import furnitureData from '../Components/images/Furniture';
 
 const ProductDetails = ({ addToCart }) => {
     const { id, type } = useParams();
@@ -15,8 +17,11 @@ const ProductDetails = ({ addToCart }) => {
     const [showAddToCartPopup, setShowAddToCartPopup] = useState(false);
     const navigate = useNavigate();
     const isClothOrFeatured = type === 'featured' || !!clothData[type];
+    const [isUserLoggedIn, setIsUserLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+
         let productData;
 
         if (type === 'best') {
@@ -27,6 +32,10 @@ const ProductDetails = ({ addToCart }) => {
             productData = clothData[type];
         } else if (dataproduct[type]) {
             productData = dataproduct[type];
+        } else if (type === 'toys') {
+            productData = toyData;
+        } else if (type === 'furniture') {
+            productData = furnitureData;
         }
 
         const foundProduct = productData?.find((p) => p.id === id);
@@ -54,6 +63,11 @@ const ProductDetails = ({ addToCart }) => {
     };
 
     const handleAddToCart = () => {
+        if (!isUserLoggedIn) {
+            navigate('/login');
+            return;
+        }
+
         if (isClothOrFeatured && !selectedSize) {
             setShowSizePopup(true);
             return;
@@ -71,6 +85,11 @@ const ProductDetails = ({ addToCart }) => {
     };
 
     const handleBuyNow = () => {
+        if (!isUserLoggedIn) {
+            navigate('/login');
+            return;
+        }
+
         if (isClothOrFeatured && !selectedSize) {
             setShowSizePopup(true);
             return;
@@ -97,7 +116,7 @@ const ProductDetails = ({ addToCart }) => {
                         {isClothOrFeatured && (
                             <>
                                 <div className="colors">
-                                    <p>Colors</p> 
+                                    <p>Colors</p>
                                     <div className="color-circles">
                                         {product.colors && Array.isArray(product.colors) && product.colors.map((color, index) => (
                                             <div

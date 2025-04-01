@@ -1,7 +1,7 @@
 import React from 'react';
-import './Blog.css'; 
+import './Blog.css';
 
-function Blog() {
+const Blog = () => {
   return (
     <div className="blog-container">
       <h1>Our Blog</h1>
@@ -26,6 +26,6 @@ function Blog() {
 
     </div>
   );
-}
+};
 
 export default Blog;

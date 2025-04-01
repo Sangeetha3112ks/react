@@ -17,7 +17,7 @@ const Category = ({ category }) => {
 
     const { data: categoryData, title, type: categoryType } = categoryMap[category] || categoryMap.men;
 
-    return (
+    return ( 
         <div className="category-container">
             <h1>{title}</h1>
             <div className="category">

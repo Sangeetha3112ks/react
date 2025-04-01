@@ -8,8 +8,8 @@ let data_fp = [
         id: "fp1",
         name: "Golden Easy Spot Chair 1",
         image: fp1_img,
-        new_price: 350.00,
-        old_price: 550.00,
+        new_price: 320.00,
+        old_price: 500.00,
         description: "This is the description for Golden Easy Spot Chair 1.",
         colors: ["gold", "cream", "espresso"] 
     },
@@ -17,8 +17,8 @@ let data_fp = [
         id: "fp2",
         name: "Golden Easy Spot Chair 2",
         image: fp2_img,
-        new_price: 350.00,
-        old_price: 550.00,
+        new_price: 385.00,
+        old_price: 610.00,
         description: "This is the description for Golden Easy Spot Chair 2.",
         colors: ["teal", "lightgray", "navy"] 
     },
@@ -26,8 +26,8 @@ let data_fp = [
         id: "fp3",
         name: "Golden Easy Spot Chair 3",
         image: fp3_img,
-        new_price: 350.00,
-        old_price: 550.00,
+        new_price: 410.00,
+        old_price: 655.00,
         description: "This is the description for Golden Easy Spot Chair 3.",
         colors: ["blanchedalmond", "olive", "saddlebrown"] 
     },
@@ -35,8 +35,8 @@ let data_fp = [
         id: "fp4",
         name: "Golden Easy Spot Chair 4",
         image: fp4_img,
-        new_price: 350.00,
-        old_price: 550.00,
+        new_price: 295.00,
+        old_price: 485.00,
         description: "This is the description for Golden Easy Spot Chair 4.",
         colors: ["lavender", "silver", "slategray"] 
     },
