@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react/static/css/main.4c315953.css",
-    "main.js": "/react/static/js/main.e23a0c44.js",
+    "main.css": "/react/static/css/main.4d7bbbb5.css",
+    "main.js": "/react/static/js/main.41160314.js",
     "static/js/373.e2344105.chunk.js": "/react/static/js/373.e2344105.chunk.js",
     "static/media/bag9.jpg": "/react/static/media/bag9.24c40f43e3d040bdfe61.jpg",
     "static/media/shoe4.jpg": "/react/static/media/shoe4.c3d6bb8d62c4fdf11485.jpg",
@@ -95,12 +95,12 @@
     "static/media/fa-v4compatibility.ttf": "/react/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/react/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/react/index.html",
-    "main.4c315953.css.map": "/react/static/css/main.4c315953.css.map",
-    "main.e23a0c44.js.map": "/react/static/js/main.e23a0c44.js.map",
+    "main.4d7bbbb5.css.map": "/react/static/css/main.4d7bbbb5.css.map",
+    "main.41160314.js.map": "/react/static/js/main.41160314.js.map",
     "373.e2344105.chunk.js.map": "/react/static/js/373.e2344105.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4c315953.css",
-    "static/js/main.e23a0c44.js"
+    "static/css/main.4d7bbbb5.css",
+    "static/js/main.41160314.js"
   ]
 }
