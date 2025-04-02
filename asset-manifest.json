@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react/static/css/main.59f200e8.css",
-    "main.js": "/react/static/js/main.41160314.js",
+    "main.js": "/react/static/js/main.a0908275.js",
     "static/js/373.e2344105.chunk.js": "/react/static/js/373.e2344105.chunk.js",
     "static/media/bag9.jpg": "/react/static/media/bag9.24c40f43e3d040bdfe61.jpg",
     "static/media/shoe4.jpg": "/react/static/media/shoe4.c3d6bb8d62c4fdf11485.jpg",
@@ -96,11 +96,11 @@
     "static/media/fa-v4compatibility.woff2": "/react/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/react/index.html",
     "main.59f200e8.css.map": "/react/static/css/main.59f200e8.css.map",
-    "main.41160314.js.map": "/react/static/js/main.41160314.js.map",
+    "main.a0908275.js.map": "/react/static/js/main.a0908275.js.map",
     "373.e2344105.chunk.js.map": "/react/static/js/373.e2344105.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.59f200e8.css",
-    "static/js/main.41160314.js"
+    "static/js/main.a0908275.js"
   ]
 }
