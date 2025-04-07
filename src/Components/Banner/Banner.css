@@ -43,13 +43,12 @@
 .button {
     display: inline-flex;
     padding: 1.2rem 3rem;
-    margin-left: 2rem;
     cursor: pointer;
-    font-size: 3rem;
+    padding-left: 80px;
     text-decoration: none;
 }
 .button a {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 .title {
     font-size: 3rem;
@@ -80,7 +79,6 @@
 .amount {
     font-size: 1.5rem;
     line-height: 1.5;
-    margin: 0;
 }
 .items-text {
     font-size: 1rem;
@@ -97,7 +95,6 @@
     border: 1px solid black;
     border-radius: 20px;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    font-size: 1rem;
     font-weight: 400;
     letter-spacing: 0.5px;
 }
@@ -138,6 +135,7 @@
     .amount-playdetails {
         margin: 1rem auto;
         flex-direction: column;
+        align-items: flex-start;
     }
     .amount {
         font-size: 1.1rem;
@@ -148,12 +146,28 @@
         font-size: 0.85rem;
         text-align: center;
     }
+    .button {
+        width: auto;
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 1rem;
+    }
     .btn {
-        margin: 1rem auto;
-        padding: 0.3rem 0.6rem;
+        font-size: 0.3rem;
+        padding: 0.3rem 0.8rem;
+        margin-left: 0;
+        display: inline-block;
+    }
+    .swiper-container .swiper-button-next::after,
+    .swiper-container .swiper-button-prev::after {
+        font-size: 2rem;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+        padding: 0 0.2rem; 
     }
 }
-    
+
 @media (max-width: 480px) {
     .title {
         font-size: 1.8rem;
@@ -166,6 +180,7 @@
     .amount-playdetails {
         margin: 1rem auto;
         flex-direction: column;
+        align-items: flex-start;
     }
     .amount {
         font-size: 1.1rem;
@@ -176,8 +191,25 @@
         font-size: 0.85rem;
         text-align: center;
     }
+    .button {
+        width: auto;
+        padding-left: 0;
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 1rem;
+    }
     .btn {
-        margin: 1rem auto;
-        padding: 0.3rem 0.6rem;
+        font-size: 0.3rem;
+        padding: 0.3rem 0.8rem;
+        margin-left: 0;
+        display: inline-block;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+        padding: 0 0.2rem; 
+    }
+    .swiper-container .swiper-button-next::after,
+    .swiper-container .swiper-button-prev::after {
+        font-size: 2rem;
     }
 }
