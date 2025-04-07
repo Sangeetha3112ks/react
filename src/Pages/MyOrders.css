@@ -1,0 +1,80 @@
+.my-orders-container {
+    padding: 20px;
+    font-family: sans-serif;
+    text-align: left;
+    background-color: white;
+    width: 350px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 1003;
+    overflow-y: auto;
+}
+.header-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.back-icon {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #555;
+    margin-right: 10px;
+}
+.back-icon:hover {
+    color: #333;
+}
+.orders-heading {
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+.orders-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 300px;
+}
+.order-item {
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9; 
+}
+.order-details {
+    margin-bottom: 10px;
+}
+.order-details p {
+    margin: 5px 0;
+}
+.order-details ul {
+    list-style: none;
+    padding: 0;
+    margin-left: 0; 
+}
+.order-details ul li {
+    display: flex; 
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+.order-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-right: 10px;
+    flex-shrink: 0; 
+}
+.order-details ul li > div {
+    flex-grow: 1; 
+}
+.center-message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #555;
+}
