@@ -49,11 +49,6 @@
         padding: 10px;
         margin: 10px auto;
     }
-    .featured h1 {
-        font-size: 1.6rem;
-        padding-top: 10px;
-        margin-bottom: 5px;
-    }
     .featured hr {
         width: 100px;
         margin-bottom: 15px;
@@ -102,5 +97,10 @@
         margin: 0 auto;
         display: block;
         border-radius: 6px;
+    }
+    .featured h1 {
+        font-size: 1.3rem;
+        padding-top: 70px; 
+        margin-bottom: 5px; 
     }
 }
