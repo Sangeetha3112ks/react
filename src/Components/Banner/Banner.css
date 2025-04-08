@@ -1,32 +1,26 @@
-.slider {
+.slider, .swiper-container, .swiper-slide, .slider .list, .slider .list .item, .responsive {
     width: 100%;
+    height: 100%;
+}
+.slider {
     height: 100vh;
     overflow: hidden;
     position: relative;
-}
-.swiper-container {
-    width: 100%;
-    height: 100%;
 }
 .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
     transition: transform 0.5s ease;
 }
 .swiper-slide:hover .responsive {
     filter: invert(10%);
 }
 .slider .list {
-    display: flex;
     width: 300%;
-    height: 100%;
     transition: transform 0.5s ease-in-out;
 }
 .slider .list .item {
-    width: 100%;
-    height: 100%;
     position: relative;
 }
 .slider .list .item .content {
@@ -47,27 +41,28 @@
     padding-left: 80px;
     text-decoration: none;
 }
-.button a {
+.button a, .amount {
     font-size: 1.2rem;
 }
 .title {
     font-size: 3rem;
     text-align: left;
     color: white;
-    margin-top: -5rem;
-    margin-left: 5rem;
+    margin: -5rem 0 0.5rem 5rem;
     max-width: 50rem;
-    margin-bottom: 0.5rem;
+}
+.description, .items-text {
+    font-size: 1rem;
+    color: black;
+    margin: 0 0 0.5rem 5rem;
+    max-width: 50rem;
 }
 .description {
-    font-size: 1rem;
-    left: 10%;
-    color: black;
     padding: 1rem 0;
     line-height: 1.5;
-    margin-left: 5rem;
-    max-width: 50rem;
-    margin-bottom: 0.5rem;
+}
+.items-text {
+    text-align: right;
 }
 .amount-playdetails {
     display: flex;
@@ -77,14 +72,7 @@
     flex-direction: column;
 }
 .amount {
-    font-size: 1.5rem;
     line-height: 1.5;
-}
-.items-text {
-    font-size: 1rem;
-    color: black;
-    text-align: right;
-    margin: 0;
 }
 .btn {
     text-decoration: none;
@@ -94,33 +82,22 @@
     background-color: white;
     border: 1px solid black;
     border-radius: 20px;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    transition: all 0.3s ease;
     font-weight: 400;
     letter-spacing: 0.5px;
 }
 .btn:hover {
     background-color: #f0f0f0;
-    color: black;
     border-color: #222;
 }
-.swiper-button-next,
-.swiper-button-prev {
+.swiper-button-next, .swiper-button-prev,
+.swiper-button-next:hover, .swiper-button-prev:hover {
     background-color: transparent;
 }
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-    background-color: transparent;
-}
-.swiper-button-next::after,
-.swiper-button-prev::after {
+.swiper-button-next::after, .swiper-button-prev::after {
     color: #ffffff;
     font-weight: 900;
     font-size: 2rem;
-}
-.responsive {
-    width: 100%;
-    max-width: 100%;
-    height: 100%;
 }
 
 @media (max-width: 768px) {
