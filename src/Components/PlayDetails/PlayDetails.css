@@ -13,13 +13,13 @@
 .play-details-link {
     text-decoration: none;
     color: white;
-    font-weight: bolder;
+    font-weight: bold;
     cursor: pointer;
 }
 .playdetails a {
     text-decoration: none;
     font-size: 1.5rem;
-    color: white;
+    color: black;
 }
 .video-popup {
     position: fixed;
