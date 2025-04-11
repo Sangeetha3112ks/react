@@ -9,7 +9,7 @@ const Footer = () => {
     <footer>
       <div className="container">
         <div className="footer-content">
-          <h4>CUSTOM SERVICE</h4>
+          <h3>CUSTOM SERVICE</h3>
           <ul>
             <li><a href="#cart">CART</a></li>
             <li><a href="#my-account">MY ACCOUNT</a></li>
@@ -20,7 +20,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="footer-content">
-          <h5>CATEGORIES</h5>
+          <h3>CATEGORIES</h3>
           <ul>
             <li><a href="#dress">DRESS</a></li>
             <li><a href="#shoes">SHOES</a></li>
@@ -31,7 +31,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="footer-content">
-          <h5>CONTACT</h5>
+          <h3>CONTACT</h3>
           <p>
             Lorem ipsum is simply dummy text of the printing and typesetting
             industry. Lorem ipsum is dummy.
