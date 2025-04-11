@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import './FeaturedProduct.css';
-import data_fp from '../images/featured_img';
-import Item from '../Items/Item';
+import React, { useState } from "react";
+import "./FeaturedProduct.css";
+import data_fp from "../images/featured_img";
+import Item from "../Items/Item";
 
 const FeaturedProduct = () => {
-  const [filter, setFilter] = useState('all');
+  const [filter, setFilter] = useState("all");
 
   const handleFilterChange = (e) => {
     setFilter(e.target.value);
   };
 
   const filteredItems = data_fp.slice();
-  if (filter === 'lowToHigh') {
+  if (filter === "lowToHigh") {
     filteredItems.sort((a, b) => a.new_price - b.new_price);
-  } else if (filter === 'highToLow') {
+  } else if (filter === "highToLow") {
     filteredItems.sort((a, b) => b.new_price - a.new_price);
   }
 
