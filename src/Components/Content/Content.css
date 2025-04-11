@@ -10,13 +10,13 @@
 }
 .contents a {
     text-decoration: none;
-    color: red;
+    color: #f6273f;
 }
 .contents h3 {
     color: #000000;
-    font-weight: bolder;
+    font-weight: 800;
     margin-bottom: 0;
-}
+}  
 .contents p {
     color: #000000;
     padding-bottom: 50px;
