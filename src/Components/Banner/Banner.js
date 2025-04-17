@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useRef } from 'react';
-import './Banner.css';
-import banner1 from '../images/Banners/banner1.jpg';
-import banner2 from '../images/Banners/banner2.jpg';
-import banner3 from '../images/Banners/banner3.jpg';
-import Swiper from 'swiper/bundle';
-import 'swiper/css/bundle';
-import PlayDetails from '../PlayDetails/PlayDetails';
+import React, { useEffect, useState, useRef } from "react";
+import "./Banner.css";
+import banner1 from "../images/Banners/banner1.jpg";
+import banner2 from "../images/Banners/banner2.jpg";
+import banner3 from "../images/Banners/banner3.jpg";
+import Swiper from "swiper/bundle";
+import "swiper/css/bundle";
+import PlayDetails from "../PlayDetails/PlayDetails";
 
 const Banner = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -14,13 +14,13 @@ const Banner = () => {
   const swiperRef = useRef(null);
 
   const slides = [
-    { image: banner1, video: require('../videos/video1.mp4') },
-    { image: banner2, video: require('../videos/video2.mp4') },
-    { image: banner3, video: require('../videos/video3.mp4') },
+    { image: banner1, video: require("../videos/video1.mp4") },
+    { image: banner2, video: require("../videos/video2.mp4") },
+    { image: banner3, video: require("../videos/video3.mp4") },
   ];
 
   useEffect(() => {
-    swiperRef.current = new Swiper('.swiper-container', {
+    swiperRef.current = new Swiper(".swiper-container", {
       slidesPerView: 1,
       spaceBetween: 10,
       pagination: {
@@ -28,8 +28,8 @@ const Banner = () => {
         clickable: true,
       },
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
       },
     });
     return () => swiperRef.current?.destroy();
@@ -63,8 +63,8 @@ const Banner = () => {
                 </div>
                 <div className="amount-playdetails">
                   <div className="amount">$600.00</div>
-                  <PlayDetails 
-                    onClick={() => handlePlayDetailsClick(slide.video)} 
+                  <PlayDetails
+                    onClick={() => handlePlayDetailsClick(slide.video)}
                     videoRef={videoRef}
                     popupVideo={popupVideo}
                     showPopup={showPopup}
@@ -72,7 +72,9 @@ const Banner = () => {
                   />
                 </div>
                 <div className="button">
-                  <a href="#" className="btn">Buy Now</a>
+                  <a href="#" className="btn">
+                    Buy Now
+                  </a>
                 </div>
               </div>
               <div className="swiper-button-next"></div>

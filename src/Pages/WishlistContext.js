@@ -1,5 +1,5 @@
-import React, { createContext, useState, useContext } from 'react';
-import LoginPopup from './LoginPopup';
+import React, { createContext, useState, useContext } from "react";
+import LoginPopup from "./LoginPopup";
 
 const WishlistContext = createContext();
 
@@ -9,7 +9,7 @@ export const WishlistProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const isLoggedIn = () => {
-    return localStorage.getItem('isLoggedIn') === 'true';
+    return localStorage.getItem("isLoggedIn") === "true";
   };
 
   const addToWishlist = (item) => {
@@ -27,7 +27,9 @@ export const WishlistProvider = ({ children }) => {
   };
 
   const removeFromWishlist = (itemId) => {
-    setWishlistItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
+    setWishlistItems((prevItems) =>
+      prevItems.filter((item) => item.id !== itemId)
+    );
     setLikedItemIds((prevIds) => prevIds.filter((id) => id !== itemId));
   };
 
