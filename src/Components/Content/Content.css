@@ -1,7 +1,6 @@
 .contents {
     text-align: center;
     display: flex;
-    background-color: white;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -9,8 +8,8 @@
     padding-top: 30px;
 }
 .contents a {
-    text-decoration: none;
-    color: #f6273f;
+    text-decoration: underline;
+    color: #0000FF;
 }
 .contents h2 {
     color: #000000;

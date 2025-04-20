@@ -7,7 +7,7 @@ const Content = () => {
       <h2>Insta Feed</h2>
       <p>
         Follow us on instagram.
-        <a href="#daxone">@Daxone</a>
+        <a href="#home">@Daxone</a>
       </p>
     </div>
   );
