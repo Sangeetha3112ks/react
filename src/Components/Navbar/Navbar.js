@@ -215,10 +215,11 @@ const Navbar = ({ getCartCount, isLoggedIn, handleLogout, userEmail }) => {
           <FontAwesomeIcon
             icon={isMenuOpen ? faTimes : faBars}
             onClick={toggleMenu}
+            aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
           />
         </div>
         <div className="nav-logo">
-          <img src={logo} alt="" />
+          <img src={logo} alt="Daxone Logo" />
           <p>Daxone</p>
         </div>
         <div className={`navmenus ${isMenuOpen ? "open" : ""}`}>
@@ -230,7 +231,7 @@ const Navbar = ({ getCartCount, isLoggedIn, handleLogout, userEmail }) => {
                 navigate("/");
               }}
             >
-              <Link to="/">Home</Link>{" "}
+              <Link to="/">Home</Link>
               {menu === "home" && <div className="underline"></div>}
             </li>
             <li
@@ -302,7 +303,7 @@ const Navbar = ({ getCartCount, isLoggedIn, handleLogout, userEmail }) => {
                 navigate("/blog");
               }}
             >
-              <Link to="/blog">Blog</Link>{" "}
+              <Link to="/blog">Blog</Link>
               {menu === "blog" && <div className="underline"></div>}
             </li>
             <li
@@ -312,7 +313,7 @@ const Navbar = ({ getCartCount, isLoggedIn, handleLogout, userEmail }) => {
                 navigate("/contact");
               }}
             >
-              <Link to="/contact">Contact</Link>{" "}
+              <Link to="/contact">Contact</Link>
               {menu === "contact" && <div className="underline"></div>}
             </li>
           </ul>
@@ -320,29 +321,25 @@ const Navbar = ({ getCartCount, isLoggedIn, handleLogout, userEmail }) => {
         <div className="nav-icons">
           <div
             onClick={handleLoginIconClick}
-            style={{
-              cursor: "pointer",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
+            style={{ cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center" }}
+            aria-label={isLoggedIn ? "User Profile" : "Login"}
           >
             <img
               src={login_icon}
-              alt="User Profile/Login"
+              alt={isLoggedIn ? "User Profile" : "Login"}
               className="login-icon"
             />
           </div>
 
-          <div className="search" onClick={toggleSearch}>
-            <img src={search_icon} alt="" />
-          </div>
-          <div className="wishlist" onClick={toggleWishlist}>
-            <img src={wishlist_icon} alt="" />
-          </div>
+          <Link to="#" className="search" onClick={toggleSearch} aria-label="Search">
+            <img src={search_icon} alt="" aria-hidden="true" />
+          </Link>
+          <Link to="#" className="wishlist" onClick={toggleWishlist} aria-label="View Wishlist">
+            <img src={wishlist_icon} alt="" aria-hidden="true" />
+          </Link>
           <div className="cart">
-            <Link to="/cart">
-              <img src={cart_icon} alt="" />
+            <Link to="/cart" aria-label="View Shopping Cart">
+              <img src={cart_icon} alt="" aria-hidden="true" />
             </Link>
             <div className="cart-count">{getCartCount()}</div>
           </div>
@@ -356,11 +353,15 @@ const Navbar = ({ getCartCount, isLoggedIn, handleLogout, userEmail }) => {
               value={search.term}
               onChange={handleSearchChange}
               onKeyPress={handleSearchKeyPress}
+              aria-label="Search products"
             />
             {search.term && (
-              <span className="close-icon" onClick={clearSearch}>
-                {" "}
-                &#x2715;{" "}
+              <span
+                className="close-icon"
+                onClick={clearSearch}
+                aria-label="Clear search"
+              >
+                &#x2715;
               </span>
             )}
             {suggestions.length > 0 && (
@@ -370,7 +371,7 @@ const Navbar = ({ getCartCount, isLoggedIn, handleLogout, userEmail }) => {
                     key={item.term}
                     onClick={() => handleSuggestionClick(item.path, item.term)}
                   >
-                    {item.term}
+                    <Link to={item.path}>{item.term}</Link>
                   </li>
                 ))}
               </ul>
@@ -383,7 +384,7 @@ const Navbar = ({ getCartCount, isLoggedIn, handleLogout, userEmail }) => {
           <div className="wishlist-modal" ref={wishlistModalRef}>
             <div className="wishlist-header">
               <h2>WISHLIST</h2>
-              <button className="close-wishlist" onClick={toggleWishlist}>
+              <button className="close-wishlist" onClick={toggleWishlist} aria-label="Close Wishlist">
                 <FontAwesomeIcon icon={faTimes} />
               </button>
             </div>
@@ -413,10 +414,7 @@ const Navbar = ({ getCartCount, isLoggedIn, handleLogout, userEmail }) => {
       )}
       {isUserProfileOpen && (
         <div className="user-profile-overlay">
-          <UserProfile
-            onClose={closeUserProfile}
-            onLogout={handleLogoutFromProfile}
-          />
+          <UserProfile onClose={closeUserProfile} onLogout={handleLogoutFromProfile} />
         </div>
       )}
     </>

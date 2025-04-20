@@ -7,7 +7,7 @@ const Item = (props) => {
   return (
     <div className="item1">
       <div className="item-image-container">
-        <Link to={`/product/${props.id}/${props.type}`}>
+        <Link to={`/product/${props.id}/${props.type}`} aria-label={props.name}>
           <img src={props.image} alt="" />
         </Link>
         <HeartIcon

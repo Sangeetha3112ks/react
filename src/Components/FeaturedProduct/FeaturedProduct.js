@@ -22,6 +22,7 @@ const FeaturedProduct = () => {
       <h1>FEATURED PRODUCTS</h1>
       <hr />
       <div className="filter-dropdown">
+        <label htmlFor="filter">Filter By:</label> {/* ADDED THIS LABEL */}
         <select id="filter" value={filter} onChange={handleFilterChange}>
           <option value="all">Default</option>
           <option value="lowToHigh">Price: Low to High</option>

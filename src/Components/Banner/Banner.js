@@ -72,13 +72,13 @@ const Banner = () => {
                   />
                 </div>
                 <div className="button">
-                  <a href="#" className="btn">
+                  <a href="#" className="btn" aria-label="Buy the featured summer fashion">
                     Buy Now
                   </a>
                 </div>
               </div>
-              <div className="swiper-button-next"></div>
-              <div className="swiper-button-prev"></div>
+              <div className="swiper-button-next" aria-label="Next slide"></div>
+              <div className="swiper-button-prev" aria-label="Previous slide"></div>
             </div>
           ))}
         </div>
