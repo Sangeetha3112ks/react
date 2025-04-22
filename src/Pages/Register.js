@@ -4,7 +4,7 @@ import "./Register.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const Register = () => {
-  const [f, sF] = useState({
+  const [fields, setFields] = useState({
     firstName: "",
     lastName: "",
     email: "",
@@ -13,181 +13,185 @@ const Register = () => {
     password: "",
     confirmPassword: "",
   });
-  const [e, sE] = useState({});
-  const n = useNavigate();
-  const [pV, sPV] = useState(false);
-  const [cPV, sCPV] = useState(false);
+  const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
 
-  const vF = (name, val) => {
-    let err = "";
+  const validateField = (name, value) => {
+    let error = "";
     switch (name) {
       case "firstName":
-        if (!val) err = "First name is required.";
-        else if (!/^[A-Za-z]+$/.test(val))
-          err = "First name should only contain letters.";
+        if (!value) {
+          error = "First name is required.";
+        } else if (!/^[A-Za-z]+$/.test(value)) {
+          error = "First name should only contain letters.";
+        }
         break;
       case "lastName":
-        if (!val) err = "Last name is required.";
-        else if (!/^[A-Za-z]+$/.test(val))
-          err = "Last name should only contain letters.";
+        if (!value) {
+          error = "Last name is required.";
+        } else if (!/^[A-Za-z]+$/.test(value)) {
+          error = "Last name should only contain letters.";
+        }
         break;
       case "email":
-        if (!val) err = "Email is required.";
-        else if (!/\S+@\S+\.\S+/.test(val)) err = "Invalid email format.";
+        if (!value) {
+          error = "Email is required.";
+        } else if (!/\S+@\S+\.\S+/.test(value)) {
+          error = "Invalid email format.";
+        }
         break;
       case "address":
-        if (!val) err = "Address is required.";
+        if (!value) error = "Address is required.";
         break;
       case "phoneNumber":
-        if (!val) err = "Phone number is required.";
-        else if (val && !/^\d{10}$/.test(val))
-          err = "Invalid phone number format. Must be 10 digits.";
+        if (!value) {
+          error = "Phone number is required.";
+        } else if (value && !/^\d{10}$/.test(value)) {
+          error = "Invalid phone number format. Must be 10 digits.";
+        }
         break;
       case "password":
-        if (!val) err = "Password is required.";
-        else {
-          const pR =
+        if (!value) {
+          error = "Password is required.";
+        } else {
+          const passwordRegex =
             /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-          if (!pR.test(val))
-            err =
+          if (!passwordRegex.test(value)) {
+            error =
               "Password must have at least 8 characters, one uppercase letter, one lowercase letter, one number, and one special character.";
+          }
         }
         break;
       case "confirmPassword":
-        if (!val) err = "Confirm password is required.";
-        else if (val !== f.password) err = "Passwords do not match.";
+        if (!value) {
+          error = "Confirm password is required.";
+        } else if (value !== fields.password) {
+          error = "Passwords do not match.";
+        }
         break;
       default:
         break;
     }
-    return err;
+    return error;
   };
 
-  const hC = (ev) => {
-    const { name, value } = ev.target;
-    sF({ ...f, [name]: value });
-    sE({ ...e, [name]: vF(name, value) });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFields({ ...fields, [name]: value });
+    setErrors({ ...errors, [name]: validateField(name, value) });
   };
 
-  const hS = (ev) => {
-    ev.preventDefault();
-    let nE = {};
-    Object.keys(f).forEach((name) => {
-      nE[name] = vF(name, f[name]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let newErrors = {};
+    Object.keys(fields).forEach((name) => {
+      newErrors[name] = validateField(name, fields[name]);
     });
-    sE(nE);
+    setErrors(newErrors);
 
-    if (Object.values(nE).every((err) => !err)) {
-      localStorage.setItem("user", JSON.stringify({ ...f }));
-      n("/login");
+    if (Object.values(newErrors).every((error) => !error)) {
+      localStorage.setItem("user", JSON.stringify({ ...fields }));
+      navigate("/login");
     }
   };
 
-  const tPV = () => {
-    sPV(!pV);
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
   };
-  const tCPV = () => {
-    sCPV(!cPV);
+  const toggleConfirmPasswordVisibility = () => {
+    setConfirmPasswordVisible(!confirmPasswordVisible);
   };
 
   return (
     <div className="register-container">
       <div className="register-form">
         <h2>Registration</h2>
-        <form onSubmit={hS}>
+        <form onSubmit={handleSubmit}>
           <div>
             <input
               type="text"
               placeholder="First Name"
               name="firstName"
-              value={f.firstName}
-              onChange={hC}
-              className={e.firstName ? "error" : ""}
+              value={fields.firstName}
+              onChange={handleChange}
+              className={errors.firstName ? "error" : ""}
             />
-            {e.firstName && <p className="error-message">{e.firstName}</p>}
+            {errors.firstName && <p className="error-message">{errors.firstName}</p>}
           </div>
           <div>
             <input
               type="text"
               placeholder="Last Name"
               name="lastName"
-              value={f.lastName}
-              onChange={hC}
-              className={e.lastName ? "error" : ""}
+              value={fields.lastName}
+              onChange={handleChange}
+              className={errors.lastName ? "error" : ""}
             />
-            {e.lastName && <p className="error-message">{e.lastName}</p>}
+            {errors.lastName && <p className="error-message">{errors.lastName}</p>}
           </div>
           <div>
             <input
               type="email"
               placeholder="Email"
               name="email"
-              value={f.email}
-              onChange={hC}
+              value={fields.email}
+              onChange={handleChange}
               autoComplete="off"
-              className={e.email ? "error" : ""}
+              className={errors.email ? "error" : ""}
             />
-            {e.email && <p className="error-message">{e.email}</p>}
+            {errors.email && <p className="error-message">{errors.email}</p>}
           </div>
           <div>
             <input
               type="text"
               placeholder="Address"
               name="address"
-              value={f.address}
-              onChange={hC}
-              className={e.address ? "error" : ""}
+              value={fields.address}
+              onChange={handleChange}
+              className={errors.address ? "error" : ""}
             />
-            {e.address && <p className="error-message">{e.address}</p>}
+            {errors.address && <p className="error-message">{errors.address}</p>}
           </div>
           <div>
             <input
               type="tel"
               placeholder="Phone Number"
               name="phoneNumber"
-              value={f.phoneNumber}
-              onChange={hC}
-              className={e.phoneNumber ? "error" : ""}
+              value={fields.phoneNumber}
+              onChange={handleChange}
+              className={errors.phoneNumber ? "error" : ""}
             />
-            {e.phoneNumber && <p className="error-message">{e.phoneNumber}</p>}
+            {errors.phoneNumber && <p className="error-message">{errors.phoneNumber}</p>}
           </div>
           <div className="password-input">
             <input
-              type={pV ? "text" : "password"}
+              type={passwordVisible ? "text" : "password"}
               placeholder="Password"
               name="password"
-              value={f.password}
-              onChange={hC}
-              className={e.password ? "error" : ""}
+              value={fields.password}
+              onChange={handleChange}
+              className={errors.password ? "error" : ""}
             />
-            <span className="password-toggle" onClick={tPV}>
-              {pV ? (
-                <i className="fas fa-eye"></i>
-              ) : (
-                <i className="fas fa-eye-slash"></i>
-              )}
+            <span className="password-toggle" onClick={togglePasswordVisibility}>
+              {passwordVisible ? <i className="fas fa-eye"></i> : <i className="fas fa-eye-slash"></i>}
             </span>
-            {e.password && <p className="error-message">{e.password}</p>}
+            {errors.password && <p className="error-message">{errors.password}</p>}
           </div>
           <div className="password-input">
             <input
-              type={cPV ? "text" : "password"}
+              type={confirmPasswordVisible ? "text" : "password"}
               placeholder="Confirm Password"
               name="confirmPassword"
-              value={f.confirmPassword}
-              onChange={hC}
-              className={e.confirmPassword ? "error" : ""}
+              value={fields.confirmPassword}
+              onChange={handleChange}
+              className={errors.confirmPassword ? "error" : ""}
             />
-            <span className="password-toggle" onClick={tCPV}>
-              {cPV ? (
-                <i className="fas fa-eye"></i>
-              ) : (
-                <i className="fas fa-eye-slash"></i>
-              )}
+            <span className="password-toggle" onClick={toggleConfirmPasswordVisibility}>
+              {confirmPasswordVisible ? <i className="fas fa-eye"></i> : <i className="fas fa-eye-slash"></i>}
             </span>
-            {e.confirmPassword && (
-              <p className="error-message">{e.confirmPassword}</p>
-            )}
+            {errors.confirmPassword && <p className="error-message">{errors.confirmPassword}</p>}
           </div>
           <div className="button-container">
             <button type="submit">Register</button>
