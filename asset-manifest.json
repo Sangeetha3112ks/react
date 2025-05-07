@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react/static/css/main.89da405e.css",
-    "main.js": "/react/static/js/main.d9b525e2.js",
+    "main.css": "/react/static/css/main.f8a34a49.css",
+    "main.js": "/react/static/js/main.6eb19e84.js",
     "static/js/373.e2344105.chunk.js": "/react/static/js/373.e2344105.chunk.js",
     "static/media/bag9.jpg": "/react/static/media/bag9.24c40f43e3d040bdfe61.jpg",
     "static/media/product4.jpg": "/react/static/media/product4.c24a034329b2fe055455.jpg",
@@ -43,12 +43,8 @@
     "static/media/video1.mp4": "/react/static/media/video1.a243e4c150b0784fee0e.mp4",
     "static/media/toy1.jpg": "/react/static/media/toy1.76de5a61fab97fe6108a.jpg",
     "static/media/toy4.jpg": "/react/static/media/toy4.cc17107b6742dbb970e0.jpg",
-    "static/media/fa-solid-900.ttf": "/react/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
     "static/media/toy8.jpg": "/react/static/media/toy8.f2c7bd87139fa5493016.jpg",
-    "static/media/fa-brands-400.ttf": "/react/static/media/fa-brands-400.1815e00441357e01619e.ttf",
     "static/media/shoe1.jpg": "/react/static/media/shoe1.c11ae5416e0eb339272c.jpg",
-    "static/media/fa-solid-900.woff2": "/react/static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
-    "static/media/fa-brands-400.woff2": "/react/static/media/fa-brands-400.c210719e60948b211a12.woff2",
     "static/media/men2.jpg": "/react/static/media/men2.fc3603dc7fb05079c647.jpg",
     "static/media/fragrance2.jpg": "/react/static/media/fragrance2.19ad1776fc6b3bf6c5d9.jpg",
     "static/media/men3.jpg": "/react/static/media/men3.1ddf5a3b16e6145a131b.jpg",
@@ -64,7 +60,6 @@
     "static/media/jewellery5.jpg": "/react/static/media/jewellery5.061fb4a57e748a732e0e.jpg",
     "static/media/jewellery4.jpg": "/react/static/media/jewellery4.b5f185c1af3e7f9f244d.jpg",
     "static/media/women1.jpg": "/react/static/media/women1.53cb6e47dc4ac5f720e4.jpg",
-    "static/media/fa-regular-400.ttf": "/react/static/media/fa-regular-400.914997e1bdfc990d0897.ttf",
     "static/media/jewellery3.jpg": "/react/static/media/jewellery3.8f28bc09efca9e24130f.jpg",
     "static/media/fragrance6.jpg": "/react/static/media/fragrance6.88cfaefd870b7cea5c3a.jpg",
     "static/media/jewellery6.jpg": "/react/static/media/jewellery6.59755edf0641d43d13b9.jpg",
@@ -82,7 +77,6 @@
     "static/media/furniture2.jpg": "/react/static/media/furniture2.7430051f8a5615f293b0.jpg",
     "static/media/furniture3.jpg": "/react/static/media/furniture3.a84c04365f1b12ae783e.jpg",
     "static/media/banner.jpg": "/react/static/media/banner.4a0b3fd987f824deba7f.jpg",
-    "static/media/fa-regular-400.woff2": "/react/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
     "static/media/furniture8.jpg": "/react/static/media/furniture8.ad0f5c0b9b6ce7f72fe4.jpg",
     "static/media/banner3.jpg": "/react/static/media/banner3.f467fba028884bbc101f.jpg",
     "static/media/banner2.jpg": "/react/static/media/banner2.f45f8b7e0c1af03e0f5c.jpg",
@@ -92,15 +86,13 @@
     "static/media/bag8.jpg": "/react/static/media/bag8.e1e46de81a2f2c2d0187.jpg",
     "static/media/shoe2.jpg": "/react/static/media/shoe2.72e4b23732ccfcdac0a8.jpg",
     "static/media/women9.jpg": "/react/static/media/women9.b172c047093c7df6c7df.jpg",
-    "static/media/fa-v4compatibility.ttf": "/react/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
-    "static/media/fa-v4compatibility.woff2": "/react/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/react/index.html",
-    "main.89da405e.css.map": "/react/static/css/main.89da405e.css.map",
-    "main.d9b525e2.js.map": "/react/static/js/main.d9b525e2.js.map",
+    "main.f8a34a49.css.map": "/react/static/css/main.f8a34a49.css.map",
+    "main.6eb19e84.js.map": "/react/static/js/main.6eb19e84.js.map",
     "373.e2344105.chunk.js.map": "/react/static/js/373.e2344105.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.89da405e.css",
-    "static/js/main.d9b525e2.js"
+    "static/css/main.f8a34a49.css",
+    "static/js/main.6eb19e84.js"
   ]
 }
