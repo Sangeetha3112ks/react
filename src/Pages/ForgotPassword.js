@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./ForgotPassword.css";
-import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const ForgotPassword = () => {
   const location = useLocation();

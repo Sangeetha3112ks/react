@@ -3,28 +3,16 @@ import playbutton from '../images/playbutton.png';
 import './PlayDetails.css';
 
 const PlayDetails = ({ onClick, videoRef, popupVideo, showPopup, closePopup }) => {
-  const handleClick = (event) => {
-    event.preventDefault();
-    onClick();
-  };
-
   useEffect(() => {
-    if (showPopup) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-
-    return () => {
-      document.body.style.overflow = '';
-    };
+    document.body.style.overflow = showPopup ? 'hidden' : '';
+    return () => (document.body.style.overflow = '');
   }, [showPopup]);
 
   return (
     <div>
       <div className="playdetails">
         <img src={playbutton} alt="" />
-        <a href="#" className="play-details-link" onClick={handleClick}>
+        <a href="#" className="play-details-link" onClick={(event) => { event.preventDefault(); onClick(); }}>
           Play Details
         </a>
       </div>
@@ -35,10 +23,7 @@ const PlayDetails = ({ onClick, videoRef, popupVideo, showPopup, closePopup }) =
             <a
               href="#"
               className="close-popup"
-              onClick={(event) => {
-                event.preventDefault();
-                closePopup();
-              }}
+              onClick={(event) => { event.preventDefault(); closePopup(); }}
             >
               &times;
             </a>
