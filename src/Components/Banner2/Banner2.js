@@ -9,13 +9,9 @@ const Banner2 = () => {
   const videoRef = useRef(null);
   const popupVideo = Video1;
 
-  const handlePlayDetailsClick = () => {
-    setShowPopup(true);
-  };
-
-  const closePopup = () => {
-    setShowPopup(false);
-    if (videoRef.current) {
+  const togglePopup = (open = !showPopup) => {
+    setShowPopup(open);
+    if (!open && videoRef.current) {
       videoRef.current.pause();
     }
   };
@@ -30,11 +26,11 @@ const Banner2 = () => {
           industry.
         </p>
         <PlayDetails
-          onClick={handlePlayDetailsClick}
+          onClick={() => togglePopup(true)}
           videoRef={videoRef}
           popupVideo={popupVideo}
           showPopup={showPopup}
-          closePopup={closePopup}
+          closePopup={() => togglePopup(false)}
         />
       </div>
     </div>

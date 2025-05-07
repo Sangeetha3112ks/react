@@ -6,38 +6,26 @@ import furnitureData from "../images/Furniture";
 import Item from "../Items/Item";
 import { useNavigate } from "react-router-dom";
 
+const productData = {
+  default: { data: data_bp, type: "best" },
+  Shoes: { data: data_bp, type: "best" },
+  Toys: { data: toyData, type: "toys" },
+  Furniture: { data: furnitureData, type: "furniture" },
+};
+
 const BestProduct = () => {
   const navigate = useNavigate();
-
-  const [filter, setFilter] = useState(() => {
-    return localStorage.getItem("selectedFilter") || "default";
-  });
+  const [filter, setFilter] = useState(() => localStorage.getItem("selectedFilter") || "default");
 
   useEffect(() => {
     localStorage.setItem("selectedFilter", filter);
   }, [filter]);
 
   const handleFilterChange = (e) => {
-    const selectedFilter = e.target.value;
-    setFilter(selectedFilter);
+    setFilter(e.target.value);
   };
 
-  let filteredItems = [];
-  let currentType = "best";
-
-  if (filter === "default" || filter === "Shoes") {
-    filteredItems = data_bp;
-    currentType = "best";
-  } else if (filter === "Toys") {
-    filteredItems = toyData;
-    currentType = "toys";
-  } else if (filter === "Furniture") {
-    filteredItems = furnitureData;
-    currentType = "furniture";
-  } else {
-    filteredItems = data_bp;
-    currentType = "best";
-  }
+  const { data: filteredItems, type: currentType } = productData[filter] || productData.default;
 
   const handleItemClick = (item, type) => {
     navigate(`/product/${item.id}/${type}`);
@@ -59,11 +47,7 @@ const BestProduct = () => {
         {filteredItems.map((item, i) => (
           <Item
             key={item.id || i}
-            id={item.id}
-            name={item.name}
-            image={item.image}
-            new_price={item.new_price}
-            old_price={item.old_price}
+            {...item}
             type={currentType}
             onClick={() => handleItemClick(item, currentType)}
           />
